@@ -5,8 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 /**
- * Created by uusr on 23.03.16.
+ * Created by UUSR on 23.03.16.
  */
+
 public class MyDb {
 
 	public static void main(String[] args)throws Exception {
