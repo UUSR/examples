@@ -9,12 +9,12 @@ import java.sql.PreparedStatement;
  */
 
 public class MyDb {
-
-	public static void main(String[] args)throws Exception {
+	
+    public static void main(String[] args)throws Exception {
 		createTable();
 		post();                
 	}
-
+    
     public static void createTable() throws Exception{
     	try {
     		 Connection con = getConnection();
@@ -29,18 +29,17 @@ public class MyDb {
     		 create.executeUpdate();    	    		
     	}  catch(Exception e){System.out.println(e);}
     	finally{ 
-    	    System.out.println("Таблица создана");
+    	    System.out.println("РўР°Р±Р»РёС†Р° СЃРѕР·РґР°РЅР°");
         }	
     }
     
-    public static void post() throws Exception{
-
+    public static void post() throws Exception{    	
     	java.util.Date myDate = new java.util.Date();
     	java.util.Date myTime = new java.util.Date();
     	java.sql.Date sqlDate = new java.sql.Date(myDate.getTime());
     	java.sql.Time sqlTime = new java.sql.Time(myTime.getTime());
-        final String var1 = "вопрос1";
-        final String var2 = "ответ1";
+        final String var1 = "РІРѕРїСЂРѕСЃ1";
+        final String var2 = "РѕС‚РІРµС‚1";
         try {
         	 Connection con = getConnection();
 			 PreparedStatement posted = con.prepareStatement("INSERT INTO mybrain"
@@ -51,7 +50,7 @@ public class MyDb {
         	 posted.executeUpdate();
         }  catch(Exception e){System.out.println(e);}
         finally {
-        	System.out.println("Запись добавлена"); 
+        	System.out.println("Р—Р°РїРёСЃСЊ РґРѕР±Р°РІР»РµРЅР°"); 
         }
     }    
     
@@ -64,7 +63,7 @@ public class MyDb {
         	Class.forName(Driver);
         	
         	Connection conn = DriverManager.getConnection(url, login, pass);
-        	System.out.println("Подключено");
+        	System.out.println("РџРѕРґРєР»СЋС‡РµРЅРѕ");
         	return conn;
         	}catch(Exception e ){System.out.println(e);}
 				
